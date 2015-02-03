@@ -75,6 +75,8 @@ class AdminController extends Controller
 				$model = $config->updateModel($model, $fieldFactory, $actionFactory);
 			}
 
+            //!!!!!!!!!!!!Response::json()后的值不会包含$model的隐藏属性,所以为了hidden变量也能进行编辑，必须先让隐藏属性变成不隐藏的. edit by: linuxsong
+            $model->setHidden(array());
 			$response = $actionPermissions['view'] ? Response::json($model) : Response::json(array(
 				'success' => false,
 				'errors' => "You do not have permission to view this item",

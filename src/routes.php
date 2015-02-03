@@ -3,6 +3,15 @@
 /**
  * Routes
  */
+//admin
+Route::group(array('prefix' => Config::get('administrator::administrator.uri')), function()
+{
+    //Route::Controler('LoginController');
+    Route::get('/login', 'admin\LoginController@getLogin');
+    Route::post('/login', 'admin\LoginController@postLogin');
+    Route::get('/logout', 'admin\LoginController@Logout');
+});
+
 Route::group(array('prefix' => Config::get('administrator::administrator.uri'), 'before' => 'validate_admin'), function()
 {
 	//Admin Dashboard

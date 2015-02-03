@@ -14,7 +14,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'title' => 'Admin',
+	'title' => '空手套后台管理',
 
 	/**
 	 * The path to your model config directory
@@ -51,7 +51,15 @@ return array(
 	 * 		'Analytics' => array('E-Commerce' => 'page.ecommerce.analytics'),
 	 *	)
 	 */
-	'menu' => array(),
+    'menu' => array(
+        '一元套宝' => array(
+            'yytbProducts',
+            'yytbProductImages',
+            'yytbGuessRecords',
+        ),
+        'exchangeProducts',
+        'users'
+    ),
 
 	/**
 	 * The permission option is the highest-level authentication check that lets you define a closure that should return true if the current user
@@ -61,7 +69,7 @@ return array(
 	 */
 	'permission'=> function()
 	{
-		return Auth::check();
+		return Auth::admin()->check();
 	},
 
 	/**
@@ -84,7 +92,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'home_page' => '',
+	'home_page' => 'yytbProducts',
 
 	/**
 	 * The route to which the user will be taken when they click the "back to site" button
@@ -98,14 +106,14 @@ return array(
 	 *
 	 * @type string
 	 */
-	'login_path' => 'user/login',
+	'login_path' => '/admin/login',
 
 	/**
 	 * The logout path is the path where Administrator will send the user when they click the logout link
 	 *
 	 * @type string
 	 */
-	'logout_path' => false,
+	'logout_path' => '/admin/logout',
 
 	/**
 	 * This is the key of the return path that is sent with the redirection to your login_action. Session::get('redirect') will hold the return URL.
