@@ -59,6 +59,7 @@ abstract class Field {
 		'min_value' => '',
 		'max_value' => '',
 		'min_max' => false,
+        'query' => ''
 	);
 
 	/**

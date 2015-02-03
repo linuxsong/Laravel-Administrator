@@ -82,6 +82,10 @@ class Enum extends Field {
 			return;
 		}
 
-		$query->where($this->config->getDataModel()->getTable().'.'.$this->getOption('field_name'), '=', $this->getOption('value'));
+        if (is_callable($this->getOption('query'))) {
+            call_user_func($this->getOption('query'), $query,$this->config->getDataModel()->getTable().'.'.$this->getOption('field_name'),  $this->getOption('value'));
+        } else {
+            $query->where($this->config->getDataModel()->getTable().'.'.$this->getOption('field_name'), '=', $this->getOption('value'));
+        }
 	}
 }
