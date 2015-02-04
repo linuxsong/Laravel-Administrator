@@ -1,5 +1,5 @@
 {
-    "name": "linuxsong/administrator",
+    "name": "linuxsong/Laravel-Administrator",
     "description": "A database interface package for Laravel",
     "homepage": "http://administrator.frozennode.com",
     "keywords": ["administrator", "admin", "database", "laravel-administrator", "laravel", "cms"],
