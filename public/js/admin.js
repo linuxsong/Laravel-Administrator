@@ -36,7 +36,7 @@
 		 *
 		 * @type bool
 		 */
-		dataTableScrollable: false,
+		dataTableScrollable: true,
 
 		/*
 		 * The pixel points where the columns are hidden
