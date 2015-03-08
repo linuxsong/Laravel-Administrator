@@ -273,6 +273,9 @@
 			 */
 			saveItem: function()
 			{
+                                for(var i in CKEDITOR.instances) {
+                                        CKEDITOR.instances[i].focusManager.blur();
+                                }
 				var self = this,
 					saveData = ko.mapping.toJS(self);
 
